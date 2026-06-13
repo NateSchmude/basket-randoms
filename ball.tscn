@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dmi51n06g5c7q"]
+
+[ext_resource type="Script" uid="uid://ijlte0l6kq5c" path="res://ball.gd" id="1_41u45"]
+[ext_resource type="Texture2D" uid="uid://cbdyv5y3sqduf" path="res://Media/bball1.png" id="1_x8fbi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_41u45"]
+bounce = 0.81
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktgx5"]
+radius = 24.186773
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41u45"]
+radius = 73.00685
+
+[node name="Node2D" type="Node2D" unique_id=1588292070]
+position = Vector2(1009, 516)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=338403846]
+collision_layer = 2
+collision_mask = 2
+mass = 0.139
+physics_material_override = SubResource("PhysicsMaterial_41u45")
+script = ExtResource("1_41u45")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=615372986]
+texture_filter = 1
+position = Vector2(0, -4.9999995)
+scale = Vector2(5, 5)
+texture = ExtResource("1_x8fbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=880076621]
+shape = SubResource("CircleShape2D_ktgx5")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D" unique_id=1445154161 groups=["ball"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D" unique_id=656200289]
+shape = SubResource("CircleShape2D_41u45")

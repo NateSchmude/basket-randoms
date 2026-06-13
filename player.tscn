@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bi3cqfmp7p2na"]
+
+[ext_resource type="Script" uid="uid://dme0c15k0amj3" path="res://Player.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://ckwje63lciaxw" path="res://Media/BR_test.png" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://dv01epqge5vs8" path="res://arm.gd" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://csq4b17d4hs5m" path="res://Media/arm.png" id="3_i3pqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
+radius = 16.0
+height = 194.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 21.023796
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 27.018513
+
+[node name="Node2D" type="Node2D" unique_id=870122406]
+position = Vector2(1517, 800)
+
+[node name="Torso" type="RigidBody2D" parent="." unique_id=2067155214]
+physics_interpolation_mode = 1
+scale = Vector2(1.0000002, 1.0000002)
+gravity_scale = 0.9
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 100)
+can_sleep = false
+script = ExtResource("1_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso" unique_id=1573666356]
+z_index = 1
+position = Vector2(0.13266325, -41.109398)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CapsuleShape2D_hqtel")
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso" unique_id=511230896]
+texture_filter = 1
+position = Vector2(1.4233522, -94.329056)
+scale = Vector2(5.000001, 5.000001)
+texture = ExtResource("2_i3pqv")
+
+[node name="Area2D" type="Area2D" parent="Torso" unique_id=1612720852]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/Area2D" unique_id=355728115]
+position = Vector2(-2.3841858e-07, 39.999992)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Node2D" type="Node2D" parent="Torso" unique_id=875332487]
+position = Vector2(20, -119)
+script = ExtResource("3_hqtel")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Torso/Node2D" unique_id=353850295]
+texture_filter = 1
+position = Vector2(3.8146973e-06, 41.99997)
+scale = Vector2(4.9999995, 4.9999995)
+texture = ExtResource("3_i3pqv")
+
+[node name="Hand_Area" type="Area2D" parent="Torso/Node2D" unique_id=1400407199]
+position = Vector2(1.0000036, 80.999954)
+
+[node name="Hand_Shape" type="CollisionShape2D" parent="Torso/Node2D/Hand_Area" unique_id=862060281]
+z_index = 10
+position = Vector2(7.6293945e-06, -1.0000134)
+shape = SubResource("CircleShape2D_i3pqv")
+
+[connection signal="area_entered" from="Torso/Area2D" to="Torso" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Torso/Area2D" to="Torso" method="_on_area_2d_area_exited"]
+[connection signal="area_shape_entered" from="Torso/Node2D/Hand_Area" to="Torso/Node2D" method="_on_area_2d_area_shape_entered"]
