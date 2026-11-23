@@ -3,7 +3,7 @@ extends Node2D
 var target_pos
 var ball_held=false;
 signal ball_touched(ball_held: bool)
-@onready var hand_area = get_node("$Hand_Area")
+@onready var hand_area = get_node("Hand_Area")
 var ball_that_is_held = null;
 
 
@@ -35,4 +35,5 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	emit_signal("ball_touched", true)
 	print("ball")
 	
+
 	
