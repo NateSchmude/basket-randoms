@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://0i641q8n31es"]
 
-[ext_resource type="Script" uid="uid://dv01epqge5vs8" path="res://arm.gd" id="1_m8ymp"]
 [ext_resource type="Texture2D" uid="uid://csq4b17d4hs5m" path="res://Media/arm.png" id="2_wbqlu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
@@ -8,7 +7,6 @@ radius = 17.029387
 
 [node name="Node2D" type="Node2D" unique_id=247044981]
 position = Vector2(19.999996, -118.99997)
-script = ExtResource("1_m8ymp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1297985517]
 texture_filter = 1

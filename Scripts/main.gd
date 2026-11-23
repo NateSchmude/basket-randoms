@@ -1,7 +1,7 @@
 extends Node2D
 
-const BALL = "res://ball.tscn"
-const RIGHT_PLAYER = "res://player.tscn"
+const BALL = "res://Scripts/main.gd"
+const RIGHT_PLAYER = "res://Scripts/Player.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

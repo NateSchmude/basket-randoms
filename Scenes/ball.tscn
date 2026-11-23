@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmi51n06g5c7q"]
 
-[ext_resource type="Script" uid="uid://ijlte0l6kq5c" path="res://ball.gd" id="1_41u45"]
+[ext_resource type="Script" uid="uid://ijlte0l6kq5c" path="res://Scripts/ball.gd" id="1_41u45"]
 [ext_resource type="Texture2D" uid="uid://cbdyv5y3sqduf" path="res://Media/bball1.png" id="1_x8fbi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_41u45"]
@@ -13,7 +13,7 @@ radius = 24.186773
 radius = 73.00685
 
 [node name="Node2D" type="Node2D" unique_id=1588292070]
-position = Vector2(1009, 516)
+position = Vector2(1111, 589)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=338403846]
 collision_layer = 2
