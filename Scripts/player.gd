@@ -34,8 +34,8 @@ func _physics_process(delta: float) -> void:
 		
 		
 		
-	if Input.is_action_just_pressed("dih"):
-		apply_torque_impulse(100000)
+	#if Input.is_action_just_pressed("dih"):
+	#	apply_torque_impulse(100000)
 	
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
