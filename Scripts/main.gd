@@ -2,6 +2,7 @@ extends Node2D
 
 const BALL = preload("res://Scenes/ball.tscn")
 const RIGHT_PLAYER = preload("res://Scenes/player.tscn") 
+#const HOOP = preload("res://Scenes/hoop.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

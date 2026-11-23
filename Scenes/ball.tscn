@@ -13,7 +13,7 @@ radius = 24.186773
 radius = 73.00685
 
 [node name="Node2D" type="Node2D" unique_id=1588292070]
-position = Vector2(1111, 589)
+position = Vector2(751, 589)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=338403846]
 collision_layer = 2

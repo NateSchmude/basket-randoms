@@ -9,7 +9,7 @@ size = Vector2(2081, 138)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
 distance = -234.0
 
-[node name="Node2D" type="Node2D" unique_id=300423676]
+[node name="Node2D" type="Node2D" unique_id=300423676 groups=["left_hoop"]]
 script = ExtResource("1_bo1nx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=782080409]
