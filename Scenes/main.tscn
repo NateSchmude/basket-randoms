@@ -9,6 +9,9 @@ size = Vector2(2081, 138)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
 distance = -234.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwosq"]
+size = Vector2(22, 793)
+
 [node name="Node2D" type="Node2D" unique_id=300423676 groups=["left_hoop"]]
 script = ExtResource("1_bo1nx")
 
@@ -30,3 +33,25 @@ position = Vector2(994, 627)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=309287229]
 shape = SubResource("WorldBoundaryShape2D_ig7tw")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=522454503]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(120, 476)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=40442921]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_gwosq")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2015939150]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1905, 476)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=83625392]
+position = Vector2(8, 0.5)
+shape = SubResource("RectangleShape2D_gwosq")
