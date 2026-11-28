@@ -9,7 +9,7 @@ var hoop_pos: Vector2
 var hand_area_pos: Vector2
 var ball_that_is_held = null;
 
-@export var throw_strength: = .125
+var throw_strength= 15
 
 func _ready() -> void:
 	hoop_area = get_tree().get_first_node_in_group("left_hoop")
@@ -17,6 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if hoop_area:
 		hoop_pos = hoop_area.global_position
+		print("yes")
 		#print(hoop_pos)
 	#if hand_area:
 		#hand_area_pos = hand_area.global_position
@@ -32,12 +33,12 @@ func _process(delta: float) -> void:
 		target_pos=arm_idle
 	rotation= move_toward(rotation, target_pos,10*delta)
 	if ball_held and Input.is_action_just_released("jump"):
-		throw_ball()
+		throw_ball(delta)
 
-func throw_ball() -> void:
+func throw_ball(delta: float) -> void:
 	var direction: Vector2 = hand_area.global_position.direction_to(hoop_pos)
 	print(direction) 
-	ball_that_is_held.throw(direction * throw_strength)
+	ball_that_is_held.throw(direction * throw_strength * delta)
 	ball_that_is_held=null
 	ball_held = false
 

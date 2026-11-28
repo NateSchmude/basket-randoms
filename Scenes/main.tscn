@@ -12,7 +12,7 @@ distance = -234.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwosq"]
 size = Vector2(22, 793)
 
-[node name="Node2D" type="Node2D" unique_id=300423676 groups=["left_hoop"]]
+[node name="Node2D" type="Node2D" unique_id=300423676]
 script = ExtResource("1_bo1nx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=782080409]

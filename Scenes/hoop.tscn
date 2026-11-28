@@ -1,20 +1,50 @@
 [gd_scene format=3 uid="uid://bt54p6gu0ur1d"]
 
+[ext_resource type="Texture2D" uid="uid://bsf5xjrkad4fg" path="res://Media/lefthoopfront.png" id="1_sx3n2"]
+[ext_resource type="Texture2D" uid="uid://cbdyv5y3sqduf" path="res://Media/bball1.png" id="2_58pkt"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j06ej"]
-size = Vector2(20, 75)
+size = Vector2(20, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy7nf"]
+size = Vector2(17, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwosq"]
 
-[node name="Node2D" type="Node2D" unique_id=1507191475]
-position = Vector2(343, 286)
+[node name="Node2D" type="Node2D" unique_id=1507191475 groups=["left_hoop"]]
+position = Vector2(198, 467)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1797494531]
+collision_layer = 2
+collision_mask = 2
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1707859138]
+texture_filter = 3
+scale = Vector2(5, 5)
+texture = ExtResource("1_sx3n2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=604118320]
-position = Vector2(-19, 0)
+light_mask = 2
+visibility_layer = 2
+position = Vector2(8, -5.5)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_j06ej")
 
-[node name="Hoop_Area" type="Area2D" parent="." unique_id=986380155 groups=["left_hoop"]]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D" unique_id=924694485]
+position = Vector2(17, 62)
+shape = SubResource("RectangleShape2D_jy7nf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hoop_Area" unique_id=1585023321]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D" unique_id=1283572115]
+position = Vector2(115, 65)
+shape = SubResource("RectangleShape2D_jy7nf")
+
+[node name="Hoop_Area" type="Area2D" parent="RigidBody2D" unique_id=986380155 groups=["left_hoop"]]
+position = Vector2(37, 36)
+gravity_space_override = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Hoop_Area" unique_id=1585023321 groups=["left_hoop"]]
 shape = SubResource("RectangleShape2D_gwosq")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/Hoop_Area" unique_id=1932711925]
+texture = ExtResource("2_58pkt")
